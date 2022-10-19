@@ -22,13 +22,27 @@ public class JacksonStacks {
     */
     private ArrayList<Integer> stackNum = new ArrayList<Integer>();
 
+
+
+    
     /**
     * This is getter
-    * ShowStack().
+    * getStack().
     *
-    * @param userInt this is the userInput.
+    * @return stackNum this is the list of numbers.
     *
     */
+    public ArrayList<Integer> getStack() {
+            return stackNum;
+    }
+
+    /**
+     *
+     * This adds numbers to the stack
+     *
+     * @param userInt this number is added to the array.
+     *
+     */
     public void push(int userInt) {
         stackNum.add(userInt);
     }
@@ -40,7 +54,28 @@ public class JacksonStacks {
     *
     */
     public int pop() {
-        return stackNum.remove(stackNum.size() - 1);
+        final int quantity = stackNum.size();
+        final int poppedItem;
+        if (stackNum.isEmpty()) {
+            poppedItem = -1;
+            System.out.println("Nothing In Stack!");
+        } else {
+            poppedItem = (int) stackNum.get(quantity - 1);
+            stackNum.remove(quantity - 1);
+        } 
+        return poppedItem;
+    }
+
+    public int peak() {
+         final int quantity = stackNum.size();
+         final int peakItem;
+        if (stackNum.isEmpty()) {
+            peakItem = 0;
+            System.out.println("Nothing In Stack!");
+        } else {
+            peakItem = (int) stackNum.get(quantity - 1);
+        }
+        return peakItem;
     }
 
     /**

@@ -38,6 +38,7 @@ final class Main {
     public static void main(final String[] args) {
 
         final int arrayPopped;
+        final int peakNumber;
 
         // This is a stack program
         final Scanner userInt = new Scanner(System.in);
@@ -69,6 +70,14 @@ final class Main {
         // Shows the popped array.
         arrayPopped = stackNum.pop();
         stackNum.finishedStack();
+
+        // The peak number.
+        System.out.println("The peak number is");
+        System.out.println("Calculating ...");
+
+        // what the peak number is.
+        peakNumber = stackNum.peak();
+        System.out.println(peakNumber);
 
         // End of program.
         System.out.println("\nDone!");
