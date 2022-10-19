@@ -46,20 +46,20 @@ final class Main {
         final JacksonStacks stackNum = new JacksonStacks();
 
         // Input user loop.
-    try {
-        while (true) {
-            System.out.print("Enter a number!: ");
-            final int userInput = userInt.nextInt();
-            if (userInput == -1) {
-                break;
-            } else {
-                stackNum.push(userInput);
+        try {
+            while (true) {
+                System.out.print("Enter a number!: ");
+                final int userInput = userInt.nextInt();
+                if (userInput == -1) {
+                    break;
+                } else {
+                    stackNum.push(userInput);
+                }
             }
-        }
-    } catch (java.util.InputMismatchException ex) {
-            System.out.println("Invalid Input, Not added to array!"); 
+        } catch (java.util.InputMismatchException ex) {
+            System.out.println("Invalid Input, Not added to array!");
             System.out.println("Program ended!");
-    }
+        }
         // Shows the first stack.
         stackNum.finishedStack();
 

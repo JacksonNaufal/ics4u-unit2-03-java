@@ -22,26 +22,20 @@ public class JacksonStacks {
     */
     private ArrayList<Integer> stackNum = new ArrayList<Integer>();
 
-
-
-    
     /**
     * This is getter
     * getStack().
     *
     * @return stackNum this is the list of numbers.
-    *
     */
     public ArrayList<Integer> getStack() {
-            return stackNum;
+        return stackNum;
     }
 
     /**
-     *
-     * This adds numbers to the stack
+     * This adds numbers to the stack.
      *
      * @param userInt this number is added to the array.
-     *
      */
     public void push(int userInt) {
         stackNum.add(userInt);
@@ -51,7 +45,6 @@ public class JacksonStacks {
     * This is the pop stack.
     *
     * @return stackNum this is the new popped number.
-    *
     */
     public int pop() {
         final int quantity = stackNum.size();
@@ -62,16 +55,21 @@ public class JacksonStacks {
         } else {
             poppedItem = (int) stackNum.get(quantity - 1);
             stackNum.remove(quantity - 1);
-        } 
+        }
         return poppedItem;
     }
 
+    /**
+     * This is a peak function.
+     *
+     * @return peakItem this is the top number in a stack.
+     */
     public int peak() {
-         final int quantity = stackNum.size();
-         final int peakItem;
+        final int quantity = stackNum.size();
+        final int peakItem;
         if (stackNum.isEmpty()) {
             peakItem = 0;
-            System.out.println("Nothing In Stack!");
+            System.out.println("Number were popped! No peak!");
         } else {
             peakItem = (int) stackNum.get(quantity - 1);
         }
