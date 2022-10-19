@@ -4,7 +4,7 @@
 *
 * @author  Jackson Naufal
 * @version 1.0
-* @since   2020-10-04
+* @since   2020-10-17
 *
 * This is a JacksonStacks program.
 */
@@ -16,11 +16,6 @@ import java.util.Scanner;
  * Class Main
  */
 final class Main {
-
-    /**
-     * This is the max for the for loop.
-     */
-    public static final int MAX = 5;
 
     /**
     * Prevent instantiation.
@@ -48,7 +43,9 @@ final class Main {
         final Scanner userInt = new Scanner(System.in);
         final Scanner removeInt = new Scanner(System.in);
         final JacksonStacks stackNum = new JacksonStacks();
+
         // Input user loop.
+    try {
         while (true) {
             System.out.print("Enter a number!: ");
             final int userInput = userInt.nextInt();
@@ -58,7 +55,10 @@ final class Main {
                 stackNum.push(userInput);
             }
         }
-
+    } catch (java.util.InputMismatchException ex) {
+            System.out.println("Invalid Input, Not added to array!"); 
+            System.out.println("Program ended!");
+    }
         // Shows the first stack.
         stackNum.finishedStack();
 
@@ -71,6 +71,6 @@ final class Main {
         stackNum.finishedStack();
 
         // End of program.
-        System.out.print("\nDone!");
+        System.out.println("\nDone!");
     }
 }
